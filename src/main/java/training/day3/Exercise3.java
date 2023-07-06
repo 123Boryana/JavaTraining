@@ -2,26 +2,30 @@ package training.day3;
 import java.util.Scanner;
 public class Exercise3 {
 
-    public static String reverse(String sentence){
+    public static String reverseSentence(String sentence) {
         String[] words = sentence.split(" ");
-        StringBuilder reverseSentence = new StringBuilder();
+        StringBuilder reversedSentence = new StringBuilder();
 
-        for(int i = words.length - 1; i >= 0; i--) {
-            reverseSentence.append(words[i]);
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversedSentence.append(words[i]);
 
-            if(i != 0)
-                reverseSentence.append(" ");
+            if (i != 0) {
+                reversedSentence.append(" ");
+            }
         }
-        return reverseSentence.toString();
+
+        return reversedSentence.toString();
     }
 
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
-        String sentence = scanner.next();
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter a sentence: ");
+            String sentence = scanner.nextLine();
 
-        String reversedSentence = reverse(sentence);
-        System.out.println("The reversed sentence is: " + reversedSentence);
+            String reversedSentence = reverseSentence(sentence);
+            System.out.println("Reversed sentence: " + reversedSentence);
 
+            scanner.close();
 
     }
 }
