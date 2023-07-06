@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class HomeworkExercise1 {
 
     public static int smallestNumber(int[] numbers) {
+
         int minimumValue = numbers[0];
         for (int i : numbers) {
             if (i < minimumValue)
