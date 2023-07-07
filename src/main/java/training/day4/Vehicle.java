@@ -1,7 +1,7 @@
 package training.day4;
 
 public class Vehicle {
-    final static double DefaultFuelConsumption = 1.25;
+    private final static double DEFAULT_FUEL_CONSUMPTION = 1.25;
     double fuelConsumption;
     double fuel;
     int horsePower;
@@ -33,14 +33,14 @@ public class Vehicle {
     public Vehicle(double fuel, int horsePower) {
         this.fuel = fuel;
         this.horsePower = horsePower;
-
     }
 
-    public void drive(double kilometers){
+    public void drive(double kilometers) {
+
         int traveledKilometers = 0;
-        while(fuel > DefaultFuelConsumption*kilometers){
+        while (fuel > DEFAULT_FUEL_CONSUMPTION*kilometers) {
             kilometers--;
-            fuel -= DefaultFuelConsumption;
+            fuel -= DEFAULT_FUEL_CONSUMPTION;
             traveledKilometers++;
         }
         System.out.println("The car traveled " + traveledKilometers + " kilometers");
