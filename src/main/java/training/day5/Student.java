@@ -64,4 +64,8 @@ class Student extends Person {
     public void addSubject(String subject) {
         subjects.add(subject);
     }
+
+    public String toString(){
+        return  name + " " + gender + " " + id + " " + className + " " + numberInClass + " " + grades + " " + subjects;
+    }
 }

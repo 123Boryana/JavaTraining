@@ -15,6 +15,7 @@ public class Main2 {
         Teacher teacher1 = new Teacher("Ivanov", "Male", 1001, "ABC School", new ArrayList<>(Arrays.asList("Math", "Physics")), 5000.0);
         Teacher teacher2 = new Teacher("Petrov", "Male", 1002, "XYZ School", new ArrayList<>(Arrays.asList("Chemistry", "Biology")), 5500.0);
 
+
         school.addStudent(student1);
         school.addTeacher(teacher1);
         school.addTeacher(teacher2);

@@ -25,4 +25,8 @@ class Teacher extends Person {
     public double getSalary() {
         return salary;
     }
+
+    public String toString(){
+        return  name + " " + gender + " " + id + " " + school + " " + subjects + " " + salary;
+    }
 }

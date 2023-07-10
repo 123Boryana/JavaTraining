@@ -1,7 +1,6 @@
 package training.day5;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 class School {
@@ -21,28 +20,16 @@ class School {
         teachers.add(teacher);
     }
 
+
     public void printInformation() {
         System.out.println("Teachers:");
         for (Teacher teacher : teachers) {
-            System.out.println("Name: " + teacher.getName());
-            System.out.println("Gender: " + teacher.getGender());
-            System.out.println("ID: " + teacher.getId());
-            System.out.println("School: " + teacher.getSchool());
-            System.out.println("Subjects: " + teacher.getSubjects());
-            System.out.println("Salary: " + teacher.getSalary());
-            System.out.println();
+            System.out.println(teacher);
         }
 
         System.out.println("Students:");
         for (Student student : students) {
-            System.out.println("Name: " + student.getName());
-            System.out.println("Gender: " + student.getGender());
-            System.out.println("ID: " + student.getId());
-            System.out.println("Class: " + student.getClassName());
-            System.out.println("Number in Class: " + student.getNumberInClass());
-            System.out.println("Grades: " + student.getGrades());
-            System.out.println("Subjects: " + student.getSubjects());
-            System.out.println();
+            System.out.println(student);
         }
     }
 
@@ -100,7 +87,9 @@ class School {
             gradeCount++;
         }
 
-        return gradeCount > 0 ? totalGrade / gradeCount : 0;
+        if (gradeCount > 0)
+            return totalGrade / gradeCount;
+        return 0;
     }
 
     public double calculateAverageGradeForClass() {
@@ -115,7 +104,9 @@ class School {
             }
         }
 
-        return gradeCount > 0 ? totalGrade / gradeCount : 0;
+        if (gradeCount > 0)
+            return totalGrade / gradeCount;
+        return 0;
     }
 
     public String getSubjectWithHighestGradeForStudent(Student student) {
@@ -141,8 +132,6 @@ class School {
 
         for (Teacher teacher : teachers) {
             for(Student student : students){
-                //grades+=student.getGradesFromTeacher().get(teacher.name);
-                //gradesCount++;
                 Map<String, Map<String, Double>> gradesMap = student.grades;
                 Map<String, Double> studentGrades = gradesMap.get(teacher.name);
 
