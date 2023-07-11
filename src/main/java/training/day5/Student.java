@@ -33,11 +33,9 @@ class Student extends Person {
             String teacherName = entry.getKey();
             Map<String, Double> subjectGrades = entry.getValue();
 
-            System.out.println("Student: " + teacherName);
             for (Map.Entry<String, Double> subjectEntry : subjectGrades.entrySet()) {
                 String subject = subjectEntry.getKey();
                 Double grade = subjectEntry.getValue();
-                System.out.println("Subject: " + subject + ", Grade: " + grade);
                 AnswerGrades.put(subject, grade);
             }
             System.out.println();
@@ -45,11 +43,9 @@ class Student extends Person {
         return AnswerGrades;
     }
 
-    //returns teacher and grade
     public Map<String, Map<String, Double>> getGradesFromTeacher() {
         return grades;
     }
-
 
     public void addGrade(String teacher, String subject, double grade) {
         HashMap<String, Double> studentGrades = new HashMap<>();

@@ -22,7 +22,7 @@ public class Main2 {
 
         school.printInformation();
 
-        String subject = "Math";
+        String subject = "Biology";
         Student studentWithHighestGrade = school.getStudentWithHighestGrade(subject);
         if (studentWithHighestGrade != null) {
             System.out.println("Student with the highest grade in " + subject + ": " + studentWithHighestGrade.getName());
