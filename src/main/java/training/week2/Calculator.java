@@ -33,6 +33,6 @@ public class Calculator {
             default:
                 System.out.println("Wrong entry");
         }
-        System.out.println(num1 + " " + operator + " " + num1  + " = " +  value);
+        System.out.println(num1 + " " + operator + " " + num2  + " = " +  value);
     }
 }
