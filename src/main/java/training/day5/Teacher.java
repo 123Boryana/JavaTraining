@@ -2,10 +2,10 @@ package training.day5;
 
 import java.util.ArrayList;
 
-class Teacher extends Person {
-    String school;
-    ArrayList<String> subjects;
-    double salary;
+public class Teacher extends Person {
+    private String school;
+    private ArrayList<String> subjects;
+    private double salary;
 
     public Teacher(String name, String gender, int id, String school, ArrayList<String> subjects, double salary) {
         super(name, gender, id);
@@ -27,6 +27,6 @@ class Teacher extends Person {
     }
 
     public String toString(){
-        return  name + " " + gender + " " + id + " " + school + " " + subjects + " " + salary;
+        return  getName() + " " + getGender() + " " + getId() + " " + getSchool() + " " + getSubjects() + " " + getSalary();
     }
 }

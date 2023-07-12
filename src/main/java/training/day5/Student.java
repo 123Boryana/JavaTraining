@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-class Student extends Person {
-    String className;
-    int numberInClass;
+public class Student extends Person {
+    private String className;
+    private int numberInClass;
     Map<String, Map<String, Double>> grades;
-    ArrayList<String> subjects;
+    private ArrayList<String> subjects;
 
     public Student(String name, String gender, int id, String className, int numberInClass) {
         super(name, gender, id);
@@ -26,8 +26,12 @@ class Student extends Person {
         return numberInClass;
     }
 
+    public Map<String, Map<String, Double>> getGrades() {
+        return grades;
+    }
+
     //returns subject and grade
-    public Map<String, Double> getGrades() {
+    public Map<String, Double> getStudentGrades() {
         Map<String, Double> AnswerGrades = new HashMap<>();
         for (Map.Entry<String, Map<String, Double>> entry : grades.entrySet()) {
             String teacherName = entry.getKey();
@@ -62,6 +66,6 @@ class Student extends Person {
     }
 
     public String toString(){
-        return  name + " " + gender + " " + id + " " + className + " " + numberInClass + " " + grades + " " + subjects;
+        return  getName() + " " + getGender() + " " + getId() + " " + getClassName() + " " + getNumberInClass() + " " + getGrades() + " " + getSubjects();
     }
 }

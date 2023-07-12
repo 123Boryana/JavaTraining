@@ -3,14 +3,15 @@ package training.day5;
 import java.util.ArrayList;
 import java.util.Map;
 
-class School {
-    ArrayList<Student> students;
-    ArrayList<Teacher> teachers;
+public class School {
+    private ArrayList<Student> students;
+    private ArrayList<Teacher> teachers;
 
     public School() {
         students = new ArrayList<>();
         teachers = new ArrayList<>();
     }
+
 
     public void addStudent(Student student) {
         students.add(student);
@@ -19,7 +20,6 @@ class School {
     public void addTeacher(Teacher teacher) {
         teachers.add(teacher);
     }
-
 
     public void printInformation() {
         System.out.println("Teachers:");
@@ -38,7 +38,7 @@ class School {
         double highestGrade = Double.MIN_VALUE;
 
         for (Student student : students) {
-            Map<String, Double> grades = student.getGrades();
+            Map<String, Double> grades = student.getStudentGrades();
             if (grades.containsKey(subject)) {
                 double grade = grades.get(subject);
                 if (grade > highestGrade) {
@@ -56,7 +56,7 @@ class School {
         double lowestGrade = Double.MAX_VALUE;
 
         for (Student student : students) {
-            Map<String, Double> grades = student.getGrades();
+            Map<String, Double> grades = student.getStudentGrades();
             if (grades.containsKey(subject)) {
                 double grade = grades.get(subject);
                 if (grade < lowestGrade) {
@@ -81,7 +81,7 @@ class School {
         double totalGrade = 0;
         int gradeCount = 0;
 
-        Map<String, Double> grades = student.getGrades();
+        Map<String, Double> grades = student.getStudentGrades();
         for (double grade : grades.values()) {
             totalGrade += grade;
             gradeCount++;
@@ -97,7 +97,7 @@ class School {
         int gradeCount = 0;
 
         for (Student student : students) {
-            Map<String, Double> grades = student.getGrades();
+            Map<String, Double> grades = student.getStudentGrades();
             for (double grade : grades.values()) {
                 totalGrade += grade;
                 gradeCount++;
@@ -113,7 +113,7 @@ class School {
         String subjectWithHighestGrade = null;
         double highestGrade = Double.MIN_VALUE;
 
-        Map<String, Double> grades = student.getGrades();
+        Map<String, Double> grades = student.getStudentGrades();
         for (Map.Entry<String, Double> entry : grades.entrySet()) {
             String subject = entry.getKey();
             double grade = entry.getValue();
@@ -131,18 +131,18 @@ class School {
         double highestAverage = 0, grades = 0, gradesCount=0;
 
         for (Teacher teacher : teachers) {
-            for(Student student : students){
+            for (Student student : students){
                 Map<String, Map<String, Double>> gradesMap = student.grades;
-                Map<String, Double> studentGrades = gradesMap.get(teacher.name);
+                Map<String, Double> studentGrades = gradesMap.get(teacher.getName());
 
                 if (studentGrades != null)
-                    for (Double grade : studentGrades.values()){
+                    for (Double grade : studentGrades.values()) {
                         grades+=grade;
                         gradesCount++;
                     }
             }
-            if(grades/gradesCount>highestAverage){
-                highestAverage=grades/gradesCount;
+            if (grades / gradesCount > highestAverage) {
+                highestAverage = grades / gradesCount;
                 teacherWithHighestGrades = teacher;
             }
         }

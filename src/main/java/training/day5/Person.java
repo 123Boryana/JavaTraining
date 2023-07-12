@@ -1,9 +1,9 @@
 package training.day5;
 
-class Person {
-    String name;
-    String gender;
-    int id;
+public class Person {
+    private String name;
+    private String gender;
+    private int id;
 
     public Person(String name, String gender, int id) {
         this.name = name;
@@ -21,5 +21,17 @@ class Person {
 
     public int getId() {
         return id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
