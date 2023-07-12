@@ -87,8 +87,9 @@ public class School {
             gradeCount++;
         }
 
-        if (gradeCount > 0)
+        if (gradeCount > 0) {
             return totalGrade / gradeCount;
+        }
         return 0;
     }
 
@@ -104,8 +105,9 @@ public class School {
             }
         }
 
-        if (gradeCount > 0)
+        if (gradeCount > 0) {
             return totalGrade / gradeCount;
+        }
         return 0;
     }
 
@@ -131,13 +133,13 @@ public class School {
         double highestAverage = 0, grades = 0, gradesCount=0;
 
         for (Teacher teacher : teachers) {
-            for (Student student : students){
+            for (Student student : students) {
                 Map<String, Map<String, Double>> gradesMap = student.grades;
                 Map<String, Double> studentGrades = gradesMap.get(teacher.getName());
 
                 if (studentGrades != null)
                     for (Double grade : studentGrades.values()) {
-                        grades+=grade;
+                        grades += grade;
                         gradesCount++;
                     }
             }

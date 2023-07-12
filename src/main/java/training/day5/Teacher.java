@@ -26,6 +26,7 @@ public class Teacher extends Person {
         return salary;
     }
 
+    @Override
     public String toString(){
         return  getName() + " " + getGender() + " " + getId() + " " + getSchool() + " " + getSubjects() + " " + getSalary();
     }

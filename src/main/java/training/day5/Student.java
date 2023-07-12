@@ -65,6 +65,7 @@ public class Student extends Person {
         subjects.add(subject);
     }
 
+    @Override
     public String toString(){
         return  getName() + " " + getGender() + " " + getId() + " " + getClassName() + " " + getNumberInClass() + " " + getGrades() + " " + getSubjects();
     }
