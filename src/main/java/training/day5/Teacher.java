@@ -28,6 +28,6 @@ public class Teacher extends Person {
 
     @Override
     public String toString(){
-        return  getName() + " " + getGender() + " " + getId() + " " + getSchool() + " " + getSubjects() + " " + getSalary();
+        return  getName() + " " + getGender() + " " + getId() + " " + school + " " + subjects + " " + salary;
     }
 }

@@ -134,7 +134,7 @@ public class School {
 
         for (Teacher teacher : teachers) {
             for (Student student : students) {
-                Map<String, Map<String, Double>> gradesMap = student.grades;
+                Map<String, Map<String, Double>> gradesMap = student.getGrades();
                 Map<String, Double> studentGrades = gradesMap.get(teacher.getName());
 
                 if (studentGrades != null)

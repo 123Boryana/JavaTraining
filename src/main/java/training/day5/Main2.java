@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main2 {
+
+    public static void teacherSigningTheGrades(Teacher teacherWithHighestGrades) {
+        if (teacherWithHighestGrades != null) {
+            System.out.println("Teacher signing the highest grades: " + teacherWithHighestGrades.getName());
+        } else {
+            System.out.println("No teacher found");
+        }
+    }
+
     public static void main(String[] args) {
         School school = new School();
 
@@ -47,17 +56,8 @@ public class Main2 {
         System.out.println("Average Grade of the Class: " + averageClassGrade);
 
         String subjectWithHighestGrade = school.getSubjectWithHighestGradeForStudent(student1);
-        if (subjectWithHighestGrade != null) {
-            System.out.println("Subject with the highest grade for Student " + student1.getName() + ": " + subjectWithHighestGrade);
-        } else {
-            System.out.println("No grades found for Student " + student1.getName());
-        }
 
         Teacher teacherWithHighestGrades = school.getTeacherWithHighestGrades();
-        if (teacherWithHighestGrades != null) {
-            System.out.println("Teacher signing the highest grades: " + teacherWithHighestGrades.getName());
-        } else {
-            System.out.println("No teacher found");
-        }
+        teacherSigningTheGrades(teacherWithHighestGrades);
     }
 }

@@ -7,7 +7,7 @@ import java.util.Map;
 public class Student extends Person {
     private String className;
     private int numberInClass;
-    Map<String, Map<String, Double>> grades;
+    private Map<String, Map<String, Double>> grades;
     private ArrayList<String> subjects;
 
     public Student(String name, String gender, int id, String className, int numberInClass) {
@@ -67,6 +67,6 @@ public class Student extends Person {
 
     @Override
     public String toString(){
-        return  getName() + " " + getGender() + " " + getId() + " " + getClassName() + " " + getNumberInClass() + " " + getGrades() + " " + getSubjects();
+        return  getName() + " " + getGender() + " " + getId() + " " + className + " " + numberInClass + " " + grades + " " + subjects;
     }
 }
