@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Main2 {
 
-    public static void teacherSigningTheGrades(Teacher teacherWithHighestGrades) {
+    public static void printTeacherSigningTheGrades(Teacher teacherWithHighestGrades) {
         if (teacherWithHighestGrades != null) {
             System.out.println("Teacher signing the highest grades: " + teacherWithHighestGrades.getName());
         } else {
@@ -13,6 +13,29 @@ public class Main2 {
         }
     }
 
+    public static void printStudentWithLowestGrade(Student studentWithLowestGrade, String subject) {
+        if (studentWithLowestGrade != null) {
+            System.out.println("Student with the lowest grade in " + subject + ": " + studentWithLowestGrade.getName());
+        } else {
+            System.out.println("No student found for " + subject);
+        }
+    }
+
+    public static void printSubjectWithHighestGrade(Student student, String subjectWithHighestGrade) {
+        if (subjectWithHighestGrade != null) {
+            System.out.println("Subject with the highest grade for Student " + student.getName() + ": " + subjectWithHighestGrade);
+        } else {
+            System.out.println("No grades found for Student " + student.getName());
+        }
+    }
+
+    public static void printStudentWithHighestGrade(Student studentWithHighestGrade, String subject) {
+        if (studentWithHighestGrade != null) {
+            System.out.println("Student with the highest grade in " + subject + ": " + studentWithHighestGrade.getName());
+        } else {
+            System.out.println("No student found for " + subject);
+        }
+    }
     public static void main(String[] args) {
         School school = new School();
 
@@ -33,18 +56,10 @@ public class Main2 {
 
         String subject = "Biology";
         Student studentWithHighestGrade = school.getStudentWithHighestGrade(subject);
-        if (studentWithHighestGrade != null) {
-            System.out.println("Student with the highest grade in " + subject + ": " + studentWithHighestGrade.getName());
-        } else {
-            System.out.println("No student found for " + subject);
-        }
+        printStudentWithHighestGrade(studentWithHighestGrade, subject);
 
         Student studentWithLowestGrade = school.getStudentWithLowestGrade(subject);
-        if (studentWithLowestGrade != null) {
-            System.out.println("Student with the lowest grade in " + subject + ": " + studentWithLowestGrade.getName());
-        } else {
-            System.out.println("No student found for " + subject);
-        }
+        printStudentWithLowestGrade(studentWithLowestGrade, subject);
 
         double averageSalary = school.calculateAverageSalary();
         System.out.println("Average Salary of Teachers: " + averageSalary);
@@ -56,8 +71,9 @@ public class Main2 {
         System.out.println("Average Grade of the Class: " + averageClassGrade);
 
         String subjectWithHighestGrade = school.getSubjectWithHighestGradeForStudent(student1);
+        printSubjectWithHighestGrade(student1, subjectWithHighestGrade);
 
         Teacher teacherWithHighestGrades = school.getTeacherWithHighestGrades();
-        teacherSigningTheGrades(teacherWithHighestGrades);
+        printTeacherSigningTheGrades(teacherWithHighestGrades);
     }
 }
