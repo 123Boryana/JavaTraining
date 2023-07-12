@@ -3,6 +3,7 @@ package training.day5;
 import java.util.ArrayList;
 
 public class Teacher extends Person {
+
     private String school;
     private ArrayList<String> subjects;
     private double salary;

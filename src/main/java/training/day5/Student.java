@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Student extends Person {
+
     private String className;
     private int numberInClass;
     private Map<String, Map<String, Double>> grades;

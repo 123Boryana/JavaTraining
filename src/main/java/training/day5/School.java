@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class School {
+
     private ArrayList<Student> students;
     private ArrayList<Teacher> teachers;
 
@@ -11,7 +12,6 @@ public class School {
         students = new ArrayList<>();
         teachers = new ArrayList<>();
     }
-
 
     public void addStudent(Student student) {
         students.add(student);
@@ -130,8 +130,8 @@ public class School {
 
     public Teacher getTeacherWithHighestGrades() {
         Teacher teacherWithHighestGrades = null;
-        double highestAverage = 0, grades = 0, gradesCount=0;
-
+        double highestAverage = 0, grades = 0, gradesCount = 0;
+        double averageGrade = grades / gradesCount;
         for (Teacher teacher : teachers) {
             for (Student student : students) {
                 Map<String, Map<String, Double>> gradesMap = student.getGrades();
@@ -143,8 +143,9 @@ public class School {
                         gradesCount++;
                     }
             }
-            if (grades / gradesCount > highestAverage) {
-                highestAverage = grades / gradesCount;
+
+            if (averageGrade > highestAverage) {
+                highestAverage = averageGrade;
                 teacherWithHighestGrades = teacher;
             }
         }
