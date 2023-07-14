@@ -138,6 +138,8 @@ public class School {
                 Map<String, Double> studentGrades = gradesMap.get(teacher.getName());
 
                 if (studentGrades != null)
+                    grades = 0;
+                    gradesCount = 0;
                     for (Double grade : studentGrades.values()) {
                         grades += grade;
                         gradesCount++;
