@@ -131,7 +131,7 @@ public class School {
     public Teacher getTeacherWithHighestGrades() {
         Teacher teacherWithHighestGrades = null;
         double highestAverage = 0, grades = 0, gradesCount = 0;
-        double averageGrade = grades / gradesCount;
+        double averageGrade = 0;
         for (Teacher teacher : teachers) {
             for (Student student : students) {
                 Map<String, Map<String, Double>> gradesMap = student.getGrades();
@@ -142,6 +142,7 @@ public class School {
                         grades += grade;
                         gradesCount++;
                     }
+                averageGrade = grades / gradesCount;
             }
 
             if (averageGrade > highestAverage) {
